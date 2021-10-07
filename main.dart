@@ -1,116 +1,138 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyfirstApp());
-}
+void main() => runApp(MyApp());
 
-class MyfirstApp extends StatelessWidget {
-  const MyfirstApp({Key? key}) : super(key: key);
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-
-            image: DecorationImage(
-            image: AssetImage("images/smoke.png"),
-            fit: BoxFit.cover,
+        appBar: AppBar(
+          title: Center(
+            child: Icon(
+              Icons.card_giftcard_sharp,
+              size: 40,
+            ),
           ),
-            gradient: LinearGradient(
-                colors: [Color(0xffFC5495), Color(0xff5B0202)],
-                begin: Alignment.topLeft,
-                end: Alignment.centerRight),
-          ),
-          width: double.infinity,
-          height: double.infinity,
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(00, 150, 00, 60),
-                child: Image.asset(
-                  "images/splash.png",
-                  width: 500,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(00, 00, 00, 20),
-                child: Text(
-                  "The King Burgar",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(40, 00, 40, 00),
-                child: Text(
-                  "Enjoy it in anywhere, anytime and any situation. Just pick up your mobile, order it now and feel the real test.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(100, 100, 100, 00),
-                child: SizedBox(
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 140,
-                        height: 50,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime[200],
-                            onPrimary: Colors.pink,
-                          ),
-                          child: Text(
-                            "Sign Up",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.red[900],
+        ),
+        body: Center(
+          child: Center(
+            child: Card(
+              clipBehavior: Clip.antiAlias,
+              elevation: 50,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(20))),
+              child: Container(
+                height: 400,
+                width: 318,
+                child: Column(
+                  children: [
+                    Container(
+                      height: 168,
+                      width: double.infinity,
+                      color: Color(0xffBCD1FF),
+                      child: Image(
+                          image: AssetImage(
+                        "images/laptop.png",
+                      )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
+                      child: Container(
+                        child: Row(
+                          children: [
+                            Text(
+                              "PRODUCTIVITY",
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 12,
+                                fontWeight: FontWeight.normal,
+                              ),
                             ),
-                          ),
+                            SizedBox(
+                              width: 130,
+                            ),
+                            Text(
+                              "3 days ago",
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 12,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              textAlign: TextAlign.left,
+                            )
+                          ],
                         ),
                       ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      SizedBox(
-                        width: 140,
-                        height: 50,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.lime[200],
-                            onPrimary: Colors.pink,
-                          ),
-                          child: Text(
-                            "Sign In",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.red[900],
-                            ),
-                          ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+                      child: Container(
+                        child: 
+                        Text("Skills of Highly Effective Programmers",
+                        style: TextStyle(
+                                  color: Color(0xff081F32),
+                                 
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+                      child: Container(
+                        child: 
+                        Text("Our team was inspired by the seven skills of highly effective programmers created by the TechLead. We wanted to provide our own take on the topic...",
+                        style: TextStyle(
+                                  color: Color(0xff081F32),
+                                 
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container( 
+                        child: Column(
+                          children: [
+                           ListTile(
+                             leading: CircleAvatar(
+                               backgroundImage: NetworkImage("https://picsum.photos/200",),
+                             ),
+                             title: Text("Glen Williams", 
+                             style: TextStyle(
+                               color: Color(0xff007AE9),
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.normal,
+                             ),
+                             ),
+                             trailing: Text("Read more",
+                             style: TextStyle(
+                               color: Color(0xff007AE9),
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.normal,
+                             ),
+                              ),
+                           ),
+                            
+                          ],
+                        ),
+                        ),
+                    ),
+                  ],
                 ),
-              )
-            ],
+              ),
+            ),
           ),
         ),
       ),
     );
   }
 }
+
